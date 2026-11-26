@@ -11,7 +11,7 @@ def greet():
     varName = request.form.get("parName")
     if not varName:
         varName = "Anonim"
-    return f"<h2>Halo, {varName}! Selamat datang di Flask First App 🚀</h2>"
+    return f"<h2>Halo, {varName}! wellcome di web gw kuhkuhkuh</h2>"
 
 if __name__ == "__main__":
     app.run(debug=True)

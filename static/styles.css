@@ -6,10 +6,10 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #08020f;
+    background: #1f0043;
     background-image: 
-        radial-gradient(circle at 20% 20%, rgba(255, 42, 122, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(255, 122, 69, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 20% 20%, rgba(88, 2, 35, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(117, 4, 49, 0.15) 0%, transparent 40%),
         radial-gradient(circle at 50% 50%, rgba(120, 24, 114, 0.2) 0%, transparent 60%);
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@ body {
     z-index: 1;
 }
 
-/* Gradasi berputar mengelilingi box */
+
 .container::before {
     content: '';
     position: absolute;
@@ -50,7 +50,7 @@ body {
     z-index: -2;
 }
 
-/* Latar dalam box utama */
+
 .container::after {
     content: '';
     position: absolute;
