@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #08020f;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255, 42, 122, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(255, 122, 69, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(120, 24, 114, 0.2) 0%, transparent 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(255, 42, 122, 0.3), 0 0 100px rgba(70, 9, 84, 0.4);
+    animation: fadeIn 0.5s ease-out;
+    z-index: 1;
+}
+
+/* Gradasi berputar mengelilingi box */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        #800230,
+        #841aa4,
+        #99156b,
+        #460954,
+        #ff2a77
+    );
+    animation: rotateGlow 4s linear infinite;
+    z-index: -2;
+}
+
+/* Latar dalam box utama */
+.container::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #110521;
+    border-radius: 17px;
+    z-index: -1;
+}
+
+h2 {
+    background: linear-gradient(90deg, #ff2a77, #ff7a45);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+label {
+    font-weight: 600;
+    color: #e0b0ff;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+input[type="text"] {
+    padding: 0.85rem 1rem;
+    background: #1c0a33;
+    border: 1.5px solid #4a156e;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #8c6a9e;
+}
+
+input[type="text"]:focus {
+    border-color: #ff2a77;
+    box-shadow: 0 0 15px rgba(255, 42, 119, 0.4);
+}
+
+button {
+    padding: 0.85rem 1.5rem;
+    background: linear-gradient(135deg, #ff2a77, #ff7a45);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 42, 119, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+button:hover {
+    transform: scale(1.04);
+    background: linear-gradient(135deg, #ff7a45, #ff2a77);
+    box-shadow: 0 0 30px rgba(255, 122, 69, 0.7);
+}
+
+.result {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(255, 42, 119, 0.1);
+    border: 1px solid rgba(255, 42, 119, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 42, 119, 0.2);
+    color: #ffffff;
+}
+
+@keyframes rotateGlow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
